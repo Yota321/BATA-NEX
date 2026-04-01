@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BATA NEX</title>
+
+  <!-- Open Graph Preview -->
+  <meta property="og:title" content="BATA NEX — Futuristic Retail Concept" />
+  <meta property="og:description" content="Future Starts At Your Feet." />
+  <meta property="og:image" content="preview.png" /> <!-- replace -->
+  <meta property="og:type" content="website" />
+
+  <!-- Auto Redirect (3 sec) -->
+  <meta http-equiv="refresh" content="3; url=https://www.figma.com/proto/3Fy0OLihiAdcROsiLD3Wgj/BATA-NEX">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQTMZGXEGH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RQTMZGXEGH');
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0B0B0F;
+      color: #EDEDED;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      padding: 40px;
+    }
+
+    img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      letter-spacing: 4px;
+      color: #C0C0C0;
+      margin: 10px 0;
+    }
+
+    .slash {
+      color: #00F5D4;
+      text-shadow: 0 0 15px #00F5D4;
+    }
+
+    .tagline {
+      color: #00F5D4;
+      margin: 10px 0;
+      letter-spacing: 1.5px;
+    }
+
+    .info {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-top: 8px;
+    }
+
+    .btn {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid #00F5D4;
+      color: #00F5D4;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00F5D4;
+      color: #0B0B0F;
+      box-shadow: 0 0 15px #00F5D4;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LOGO (replace with your SVG) -->
+  <img src="logo.svg" alt="BATA NEX Logo">
+
+  <h1>BATA <span class="slash">/</span> NEX</h1>
+  <div class="tagline">Future Starts At Your Feet</div>
+
+  <div class="info" id="referrerText">Opening...</div>
+
+  <a class="btn" href="https://www.figma.com/proto/3Fy0OLihiAdcROsiLD3Wgj/BATA-NEX">
+    ENTER EXPERIENCE
+  </a>
+
+</div>
+
+<script>
+  // Detect where user came from
+  const ref = document.referrer;
+  const refText = document.getElementById("referrerText");
+
+  if (ref) {
+    try {
+      const domain = new URL(ref).hostname;
+      refText.innerText = "Opened from: " + domain;
+    } catch {
+      refText.innerText = "Opened from external source";
+    }
+  } else {
+    refText.innerText = "Opened directly";
+  }
+
+  // Device + screen tracking
+  function sendUserData() {
+    const device = navigator.userAgent;
+    const screenSize = `${window.innerWidth}x${window.innerHeight}`;
+
+    gtag('event', 'user_info', {
+      device: device,
+      screen_size: screenSize
+    });
+  }
+
+  sendUserData();
+</script>
+
+</body>
+</html>

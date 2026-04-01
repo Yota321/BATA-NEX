@@ -10,9 +10,6 @@
   <meta property="og:image" content="preview.png" />
   <meta property="og:type" content="website" />
 
-  <!-- Auto Redirect (0.5 sec) -->
-  <meta http-equiv="refresh" content="0.5; url=https://www.figma.com/proto/3Fy0OLihiAdcROsiLD3Wgj/BATA-NEX">
-
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQTMZGXEGH"></script>
   <script>
@@ -23,8 +20,13 @@
   </script>
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -33,11 +35,11 @@
       color: #EDEDED;
       overflow: hidden;
 
-      /* Improved background */
+      /* Better background */
       background:
-        radial-gradient(circle at 30% 30%, rgba(146,102,221,0.15), transparent 40%),
-        radial-gradient(circle at 70% 70%, rgba(228,94,140,0.12), transparent 40%),
-        linear-gradient(#0B0B0F, #0B0B0F);
+        radial-gradient(circle at 20% 30%, rgba(146,102,221,0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(228,94,140,0.15), transparent 40%),
+        #0B0B0F;
     }
 
     /* subtle grid */
@@ -62,9 +64,10 @@
 
     /* BIG SVG LOGO */
     .logo {
-      width: 520px;
+      width: 500px;
       max-width: 95%;
       margin-bottom: 20px;
+      display: block;
     }
 
     .tagline {
@@ -108,8 +111,8 @@
 
 <div class="container">
 
-  <!-- SVG LOGO -->
-  <img src="./logo.svg" class="logo" alt="BATA NEX Logo">
+  <!-- ONLY LOGO (NO TEXT DUPLICATION) -->
+  <img src="./logo.svg?v=2" class="logo" alt="BATA NEX Logo">
 
   <div class="tagline">Future Starts At Your Feet</div>
   <div class="desc">Futuristic retail concept for Gen Z sneaker culture.</div>
@@ -150,6 +153,11 @@
   }
 
   sendUserData();
+
+  // JS redirect (better than meta, avoids cache issues)
+  setTimeout(() => {
+    window.location.href = "https://www.figma.com/proto/3Fy0OLihiAdcROsiLD3Wgj/BATA-NEX";
+  }, 500);
 </script>
 
 </body>

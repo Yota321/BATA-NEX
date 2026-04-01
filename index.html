@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BATA NEX</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BATA NEX — Futuristic Retail Concept" />
+  <meta property="og:description" content="Future Starts At Your Feet." />
+  <meta property="og:image" content="preview.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQTMZGXEGH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RQTMZGXEGH');
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #EDEDED;
+      overflow: hidden;
+
+      /* Better background */
+      background:
+        radial-gradient(circle at 20% 30%, rgba(146,102,221,0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(228,94,140,0.15), transparent 40%),
+        #0B0B0F;
+    }
+
+    /* subtle grid */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+      padding: 40px;
+      z-index: 1;
+    }
+
+    /* BIG SVG LOGO */
+    .logo {
+      width: 500px;
+      max-width: 95%;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .tagline {
+      color: #9266dd;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    .desc {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 8px;
+    }
+
+    .info {
+      font-size: 12px;
+      opacity: 0.5;
+      margin-top: 10px;
+    }
+
+    .btn {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 12px 26px;
+      border: 1px solid #e45e8c;
+      color: #e45e8c;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      background: #e45e8c;
+      color: #0B0B0F;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- ONLY LOGO (NO TEXT DUPLICATION) -->
+  <img src="./logo.svg?v=2" class="logo" alt="BATA NEX Logo">
+
+  <div class="tagline">Future Starts At Your Feet</div>
+  <div class="desc">Futuristic retail concept for Gen Z sneaker culture.</div>
+
+  <div class="info" id="referrerText">Opening...</div>
+
+  <a class="btn" href="https://www.figma.com/proto/3Fy0OLihiAdcROsiLD3Wgj/BATA-NEX">
+    ENTER EXPERIENCE
+  </a>
+
+</div>
+
+<script>
+  // Referrer detection
+  const ref = document.referrer;
+  const refText = document.getElementById("referrerText");
+
+  if (ref) {
+    try {
+      const domain = new URL(ref).hostname;
+      refText.innerText = "Opened from: " + domain;
+    } catch {
+      refText.innerText = "Opened from external source";
+    }
+  } else {
+    refText.innerText = "Opened directly";
+  }
+
+  // Analytics
+  function sendUserData() {
+    const device = navigator.userAgent;
+    const screenSize = `${window.innerWidth}x${window.innerHeight}`;
+
+    gtag('event', 'user_info', {
+      device: device,
+      screen_size: screenSize
+    });
+  }
+
+  sendUserData();
+
+  // JS redirect (better than meta, avoids cache issues)
+  setTimeout(() => {
+    window.location.href = "https://www.figma.com/proto/3Fy0OLihiAdcROsiLD3Wgj/BATA-NEX";
+  }, 500);
+</script>
+
+</body>
+</html>

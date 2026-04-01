@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <title>BATA NEX</title>
 
-  <!-- Open Graph Preview -->
+  <!-- Open Graph -->
   <meta property="og:title" content="BATA NEX — Futuristic Retail Concept" />
   <meta property="og:description" content="Future Starts At Your Feet." />
-  <meta property="og:image" content="preview.png" /> <!-- replace -->
+  <meta property="og:image" content="preview.png" />
   <meta property="og:type" content="website" />
 
-  <!-- Auto Redirect (1 sec) -->
-  <meta http-equiv="refresh" content="1; url=https://www.figma.com/proto/3Fy0OLihiAdcROsiLD3Wgj/BATA-NEX">
+  <!-- Auto Redirect (0.5 sec) -->
+  <meta http-equiv="refresh" content="0.5; url=https://www.figma.com/proto/3Fy0OLihiAdcROsiLD3Wgj/BATA-NEX">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQTMZGXEGH"></script>
@@ -19,71 +19,87 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-RQTMZGXEGH');
   </script>
 
   <style>
     body {
       margin: 0;
-      background: #0B0B0F;
-      color: #EDEDED;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #EDEDED;
+      overflow: hidden;
+
+      /* Improved background */
+      background:
+        radial-gradient(circle at 30% 30%, rgba(146,102,221,0.15), transparent 40%),
+        radial-gradient(circle at 70% 70%, rgba(228,94,140,0.12), transparent 40%),
+        linear-gradient(#0B0B0F, #0B0B0F);
+    }
+
+    /* subtle grid */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
     }
 
     .container {
-      max-width: 500px;
+      text-align: center;
+      max-width: 600px;
       padding: 40px;
+      z-index: 1;
     }
 
-    img {
-      width: 200px;
+    /* BIG SVG LOGO */
+    .logo {
+      width: 520px;
+      max-width: 95%;
       margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: 36px;
-      letter-spacing: 4px;
-      color: #C0C0C0;
-      margin: 10px 0;
-    }
-
-    .slash {
-      color: #00F5D4;
-      text-shadow: 0 0 15px #00F5D4;
-    }
-
     .tagline {
-      color: #00F5D4;
-      margin: 10px 0;
-      letter-spacing: 1.5px;
+      color: #9266dd;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    .desc {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 8px;
     }
 
     .info {
       font-size: 12px;
-      opacity: 0.6;
-      margin-top: 8px;
+      opacity: 0.5;
+      margin-top: 10px;
     }
 
     .btn {
       margin-top: 25px;
       display: inline-block;
-      padding: 10px 20px;
-      border: 1px solid #00F5D4;
-      color: #00F5D4;
+      padding: 12px 26px;
+      border: 1px solid #e45e8c;
+      color: #e45e8c;
       text-decoration: none;
-      transition: 0.3s;
+      letter-spacing: 1px;
+      transition: 0.25s ease;
     }
 
     .btn:hover {
-      background: #00F5D4;
+      background: #e45e8c;
       color: #0B0B0F;
-      box-shadow: 0 0 15px #00F5D4;
     }
   </style>
 </head>
@@ -92,11 +108,11 @@
 
 <div class="container">
 
-  <!-- LOGO (replace with your SVG) -->
-  <img src="logo.svg" alt="BATA NEX Logo">
+  <!-- SVG LOGO -->
+  <img src="./logo.svg" class="logo" alt="BATA NEX Logo">
 
-  <h1>BATA <span class="slash">/</span> NEX</h1>
   <div class="tagline">Future Starts At Your Feet</div>
+  <div class="desc">Futuristic retail concept for Gen Z sneaker culture.</div>
 
   <div class="info" id="referrerText">Opening...</div>
 
@@ -107,7 +123,7 @@
 </div>
 
 <script>
-  // Detect where user came from
+  // Referrer detection
   const ref = document.referrer;
   const refText = document.getElementById("referrerText");
 
@@ -122,7 +138,7 @@
     refText.innerText = "Opened directly";
   }
 
-  // Device + screen tracking
+  // Analytics
   function sendUserData() {
     const device = navigator.userAgent;
     const screenSize = `${window.innerWidth}x${window.innerHeight}`;

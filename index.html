@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <title>BATA NEX</title>
 
-  <!-- Open Graph -->
+  <!-- Open Graph (FIXED) -->
   <meta property="og:title" content="BATA NEX — Futuristic Retail Concept" />
   <meta property="og:description" content="Future Starts At Your Feet." />
-  <meta property="og:image" content="preview.png" />
+  <meta property="og:image" content="https://yota321.github.io/BATA-NEX/preview.png" />
+  <meta property="og:url" content="https://yota321.github.io/BATA-NEX/" />
   <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQTMZGXEGH"></script>
@@ -31,15 +35,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: "Space Grotesk", sans-serif;
       color: #EDEDED;
       overflow: hidden;
 
-      /* Better background */
+      /* CLEAN BACKGROUND */
       background:
-        radial-gradient(circle at 20% 30%, rgba(146,102,221,0.15), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(228,94,140,0.15), transparent 40%),
-        #0B0B0F;
+        linear-gradient(180deg, #0B0B0F 0%, #111118 100%);
     }
 
     /* subtle grid */
@@ -49,9 +51,9 @@
       width: 100%;
       height: 100%;
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
       pointer-events: none;
     }
 
@@ -64,40 +66,39 @@
 
     /* BIG SVG LOGO */
     .logo {
-      width: 500px;
-      max-width: 95%;
-      margin-bottom: 20px;
-      display: block;
+      width: 460px;
+      max-width: 90%;
+      margin-bottom: 24px;
     }
 
     .tagline {
       color: #9266dd;
-      font-size: 16px;
-      letter-spacing: 2px;
-      margin-top: 10px;
+      font-size: 15px;
+      letter-spacing: 1.5px;
     }
 
     .desc {
       font-size: 13px;
-      opacity: 0.6;
-      margin-top: 8px;
+      opacity: 0.5;
+      margin-top: 6px;
     }
 
     .info {
       font-size: 12px;
-      opacity: 0.5;
-      margin-top: 10px;
+      opacity: 0.4;
+      margin-top: 14px;
     }
 
     .btn {
-      margin-top: 25px;
+      margin-top: 28px;
       display: inline-block;
-      padding: 12px 26px;
+      padding: 12px 28px;
       border: 1px solid #e45e8c;
       color: #e45e8c;
       text-decoration: none;
+      font-size: 13px;
       letter-spacing: 1px;
-      transition: 0.25s ease;
+      transition: 0.2s ease;
     }
 
     .btn:hover {
@@ -111,8 +112,8 @@
 
 <div class="container">
 
-  <!-- ONLY LOGO (NO TEXT DUPLICATION) -->
-  <img src="./logo.svg?v=2" class="logo" alt="BATA NEX Logo">
+  <!-- SVG LOGO -->
+  <img src="./logo.svg?v=4" class="logo" alt="BATA NEX Logo">
 
   <div class="tagline">Future Starts At Your Feet</div>
   <div class="desc">Futuristic retail concept for Gen Z sneaker culture.</div>
@@ -135,7 +136,7 @@
       const domain = new URL(ref).hostname;
       refText.innerText = "Opened from: " + domain;
     } catch {
-      refText.innerText = "Opened from external source";
+      refText.innerText = "Opened externally";
     }
   } else {
     refText.innerText = "Opened directly";
@@ -154,7 +155,7 @@
 
   sendUserData();
 
-  // JS redirect (better than meta, avoids cache issues)
+  // Redirect (0.5 sec)
   setTimeout(() => {
     window.location.href = "https://www.figma.com/proto/3Fy0OLihiAdcROsiLD3Wgj/BATA-NEX";
   }, 500);
